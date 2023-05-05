@@ -47,22 +47,19 @@
 
 					<div class="wrap-input100 validate-input m-b-23">
 						<span class="label-input100">Número do Chamado</span>
-						<input class="input100" type="number" name="numero_chamado" value="<?php echo $row_chamado['ticket'];?>" reandoly>
-						<span class="focus-input100"></span>
+						<input class="input100" type="number" name="numero_chamado" value="<?php echo $row_chamado['ticket'];?>" readonly>
 						<i class="fa fa-list-ol fa-lg fa-fw"></i>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-23">
 						<span class="label-input100">Nome do Cliente</span>
-						<input class="input100" type="text" name="nome_cliente" value="<?php echo $row_chamado['cliente'];?>" reandoly>
-						<span class="focus-input100"></span>
+						<input class="input100" type="text" name="nome_cliente" value="<?php echo $row_chamado['cliente'];?>" readonly>
 						<i class="fa fa-user fa-lg fa-fw"></i>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "">
 						<span class="label-input100">E-mail do cliente</span>
-						<input class="input100" type="text" name="email_cliente" value="<?php echo $emails;?>" reandoly>
-						<span class="focus-input100"></span>
+						<input class="input100" type="text" name="email_cliente" value="<?php echo $emails;?>" readonly>
 						<i class="fa fa-envelope fa-lg fa-fw"></i>
 					</div>
 
@@ -74,44 +71,44 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Nome do responsável pela retirada é obrigatorio">
-						<span class="label-input100">Nome do Responsável pela Retirada</span>
+						<span class="label-input100">Nome da Pessoa que está Retirando (Obrigatório)</span>
 						<input class="input100" type="text" name="nome_resposavel_retirada" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-user fa-lg fa-fw"></i>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Nome do responsável pela retirada é obrigatorio">
-						<span class="label-input100">CPF/RG do Responsável pela Retirada</span>
+					<div class="wrap-input100 m-b-23">
+						<span class="label-input100">CPF/RG da Pessoa que está Retirando</span>
 						<input class="input100" type="text" maxlength="20" id="documento_resposavel_retirada" name="documento_resposavel_retirada" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-address-card fa-lg fa-fw"></i>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Telefone do responsável pela retirada é obrigatorio">
-						<span class="label-input100">Telefone do Responsável pela Retirada</span>
+					<div class="wrap-input100 m-b-23">
+						<span class="label-input100">Telefone da Pessoa que está Retirando</span>
 						<input class="input100" type="text" maxlength="16" id="telefone_resposavel_retirada" onkeyup="handlePhone(event)" name="telefone_resposavel_retirada" placeholder="" maxlength="13">
 						<span class="focus-input100"></span>
 						<i class="fa fa-phone fa-lg fa-fw"></i>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Tecnico responsável pela entrega é obrigatorio">
-						<span class="label-input100">Tecnico Responsável pela Entrega</span>
+						<span class="label-input100">Tecnico Responsável pela Entrega (Obrigatório)</span>
 						<input class="input100" type="text" name="tecnico_resposavel_entrega" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-user fa-lg fa-fw"></i>
 					</div>
 
-					<div class="wrap-input100">
-						<span class="label-input1000">Observação</span>
+					<div class="wrap-input100 m-b-23">
+						<span class="label-input100">Observação (Obrigatório)</span>
 						<input class="input100" type="text" name="observacao" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-sticky-note   fa-lg fa-fw"></i>
 					</div><br>
 					
-					<div class="wrap-input1000 validate-input">
-						<span class="label-input100">Foto da Ficha da Máquina</span><br><br>
+					<div class="wrap-input1000 validate-input m-b-23">
+						<span class="label-input100">Foto da Ficha da Máquina (Obrigatório)</span><br><br>
 						<center><label class="fa fa-camera fa-lg" for="arquivo" style="width: 20px;"></label></center>
-						<input class="input100" type="file" id="arquivo" name="arquivo" placeholder="">
+						<input class="input100" type="file" id="arquivo" name="arquivo" placeholder="" style="display: none;">
 						<span class="focus-input100"></span>
 					</div><br>
 
