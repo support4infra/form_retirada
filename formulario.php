@@ -99,7 +99,7 @@
 					</div>
 
 					<div class="wrap-input100 m-b-23">
-						<span class="label-input100">Observação (Obrigatório)</span>
+						<span class="label-input100">Observação</span>
 						<input class="input100" type="text" name="observacao" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-sticky-note   fa-lg fa-fw"></i>
