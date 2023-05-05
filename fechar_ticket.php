@@ -1,5 +1,5 @@
 <?php
-    //Colocar a data retirada no fuso horario
+    //Colocar a data retirada no fuso horarioo
     date_default_timezone_set('America/Sao_Paulo');
 
     //Recebendo os campos do formulário
