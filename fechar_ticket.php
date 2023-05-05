@@ -17,8 +17,8 @@
     //pega a extensao do arquivo
     $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); 
     
+    //Codição para adicionar um . no inicio da extensão para extensões que não entregam com o .
     $validar = strpos($extensao, '.');
-
     if($validar === false){
         $extensao = ".".$extensao; 
     }
