@@ -12,7 +12,15 @@
     $documento_resposavel_retirada = $_POST['documento_resposavel_retirada'];
     $telefone_resposavel_retirada = $_POST['telefone_resposavel_retirada'];
     $tecnico_resposavel_entrega = $_POST['tecnico_resposavel_entrega'];
-    $observacao = $_POST['observacao'];
+
+    //Caso não tenha observação.
+    if (empty($_POST['observacao'])){
+        $observacao = "";
+    }
+    else{
+        $observacao = $_POST['observacao'];
+    }
+    
     
     //pega a extensao do arquivo
     $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); 
@@ -32,7 +40,7 @@
 
 
     //Texto da Interação do chamado e 'ADDSLASHER' para nao conflitas as aspas com o banco
-    $interacao_chamado = "&#60;p&#62;Olá,&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Seu equipamento foi retirado por:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$nome_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Documento do responsável pela retirada:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$documento_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Telefone do responsável pela retirada:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$telefone_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Técnico responsável pela entrega:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$tecnico_resposavel_entrega."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Observação:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$observacao."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Foto da ficha da Máquina:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;"."http://192.168.100.198/upload/".$novo_nome_arquivo."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Número do ticket:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;&#60;strong&#62;".$numero_chamado."&#60;/strong&#62;&#60;/p&#62;";
+    $interacao_chamado = "&#60;p&#62;Olá,&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Seu equipamento foi retirado por:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$nome_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Documento do responsável pela retirada:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$documento_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Telefone do responsável pela retirada:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$telefone_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Técnico responsável pela entrega:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$tecnico_resposavel_entrega."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Observação:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$observacao."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Foto da ficha da Máquina:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;"."http://192.168.100.198/formulario_Bancada/upload/".$novo_nome_arquivo."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Número do ticket:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;&#60;strong&#62;".$numero_chamado."&#60;/strong&#62;&#60;/p&#62;";
     $interacao_chamado = addslashes($interacao_chamado);
 
     //Conexão ao Banco

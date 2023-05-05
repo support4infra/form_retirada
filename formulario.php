@@ -101,7 +101,7 @@
 						<i class="fa fa-user fa-lg fa-fw"></i>
 					</div>
 
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100">
 						<span class="label-input1000">Observação</span>
 						<input class="input100" type="text" name="observacao" placeholder="">
 						<span class="focus-input100"></span>
@@ -111,7 +111,7 @@
 					<div class="wrap-input1000 validate-input">
 						<span class="label-input100">Foto da Ficha da Máquina</span><br><br>
 						<center><label class="fa fa-camera fa-lg" for="arquivo" style="width: 20px;"></label></center>
-						<input class="input100" type="file" id="arquivo" name="arquivo" placeholder="" style="display: none;">
+						<input class="input100" type="file" id="arquivo" name="arquivo" placeholder="">
 						<span class="focus-input100"></span>
 					</div><br>
 
