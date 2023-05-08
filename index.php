@@ -1,3 +1,11 @@
+<?php
+$ticket = 1;
+    //Verificar se o Ticket é valido ou da bancada
+	if(isset($_GET['ticket'])){
+		$ticket = $_GET['ticket'];
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +52,12 @@
 						<span class="focus-input100"></span>
 						<i class="fa fa-list-ol fa-lg fa-fw"></i>
 					</div>
+
+					<?php
+					if($ticket == 0){
+						Echo 	"<div class='alert alert-danger' role='alert'>O chamado inserido, não existe ou não pertece a categoria bancada</div>";
+					}							
+					?>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
