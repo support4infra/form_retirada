@@ -48,7 +48,7 @@ $ticket = 1;
 
 					<div class="wrap-input100 validate-input m-b-23">
 						<span class="label-input100">Número do Chamado</span>
-						<input class="input100" type="number" name="numero_chamado">
+						<input class="input100" type="number" maxlength="6" name="numero_chamado">
 						<span class="focus-input100"></span>
 						<i class="fa fa-list-ol fa-lg fa-fw"></i>
 					</div>

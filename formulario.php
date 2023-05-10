@@ -72,7 +72,7 @@
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Nome do responsável pela retirada é obrigatorio">
 						<span class="label-input100">Nome da Pessoa que está Retirando (Obrigatório)</span>
-						<input class="input100" type="text" name="nome_resposavel_retirada" placeholder="">
+						<input class="input100" type="text" maxlength="" maxlength="80" name="nome_resposavel_retirada" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-user fa-lg fa-fw"></i>
 					</div>
@@ -93,14 +93,14 @@
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Tecnico responsável pela entrega é obrigatorio">
 						<span class="label-input100">Tecnico Responsável pela Entrega (Obrigatório)</span>
-						<input class="input100" type="text" name="tecnico_resposavel_entrega" placeholder="">
+						<input class="input100" type="text" maxlength="80" name="tecnico_resposavel_entrega" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-user fa-lg fa-fw"></i>
 					</div>
 
 					<div class="wrap-input100 m-b-23">
 						<span class="label-input100">Observação</span>
-						<input class="input100" type="text" name="observacao" placeholder="">
+						<input class="input100" type="text" maxlength="300" name="observacao" placeholder="">
 						<span class="focus-input100"></span>
 						<i class="fa fa-sticky-note   fa-lg fa-fw"></i>
 					</div><br>
