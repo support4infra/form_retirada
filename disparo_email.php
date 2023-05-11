@@ -26,9 +26,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom('4infrabh@gmail.com', '4infra');
-    $mail->addAddress('mario@4infra.com.br', 'Suporte');  
-    $mail->addAddress('mario_willian@outlook.com', 'Mario');
-    $mail->addAddress('mariogodaoo@hotmail.com', 'Mario');
+    $mail->addAddress('suporte@4infra.com.br', 'Suporte');  
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
