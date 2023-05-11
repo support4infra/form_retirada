@@ -10,9 +10,17 @@
     $row_chamado = mysqli_fetch_assoc($resultado_chamado);
 
 
-    
+    //Condição pra verificar se o ticket ta fechado, solucionado, nao existe ou nao pertence a bancada
     if(empty($row_chamado)){
         header('location:index.php?ticket=0');
+    }
+
+    if(empty($row_chamado)){
+        header('location:index.php?ticket=0');
+    }else if($row_chamado['status'] == 6){
+        header('location:index.php?ticket=1');
+    }else if($row_chamado['status'] == 5){
+        header('location:index.php?ticket=2');
     }
 
     //Variaveis

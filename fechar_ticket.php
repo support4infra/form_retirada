@@ -1,6 +1,7 @@
 <?php
     //Colocar a data retirada no fuso horarioo
     date_default_timezone_set('America/Sao_Paulo');
+    header("Content-type: text/html; charset=utf-8");
 
     //Recebendo os campos do formulário
     $numero_chamado = $_POST['numero_chamado'];
@@ -35,7 +36,9 @@
 
     //Texto da Interação do chamado e 'ADDSLASHER' para nao conflitas as aspas com o banco
     $interacao_chamado = "&#60;p&#62;Olá,&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Seu equipamento foi retirado por:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$nome_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Documento da pessoa que retirou:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$documento_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Telefone da pessoa que retirou:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$telefone_resposavel_retirada."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Técnico responsável pela entrega:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$tecnico_resposavel_entrega."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Observação:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;".$observacao."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Foto da ficha da Máquina:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;"."http://192.168.100.198/formulario_bancada/upload/".$novo_nome_arquivo."&#60;/p&#62; &#60;p&#62;&#60;strong&#62;Número do ticket:&#60;/strong&#62;&#60;/p&#62; &#60;p&#62;&#60;strong&#62;".$numero_chamado."&#60;/strong&#62;&#60;/p&#62;";
+    $interacao_email = "Olá,<br><br><b>Seu equipamento foi retirado por:</b><br><br>".$nome_resposavel_retirada."<br><br><b>Documento da pessoa que retirou:</b><br><br>".$documento_resposavel_retirada."<br><br><b>Telefone da pessoa que retirou:</b><br><br>".$telefone_resposavel_retirada."<b><br><br>Técnico responsável pela entrega:</b><br><br>".$tecnico_resposavel_entrega."<b><br><br>Observação:</b><br><br>".$observacao."<b><br><br>Número do ticket:<br><br>".$numero_chamado."<br><br><br>Mensagem automatica, não responder.</b><br><br>4infra.<br>Suporte | Equipe de suporte<br>(31) 3195-0580<br>suporte@4infra.com.br<br>";
     $interacao_chamado = addslashes($interacao_chamado);
+    $interacao_email = addslashes($interacao_email);
 
     //Conexão ao Banco
     include_once 'conexao.php';
@@ -47,6 +50,8 @@
     //Fechar o chamado, atualizando o status para FECHADO
     $atualizar_chamado = "UPDATE glpi_tickets SET Status = 6 where id = $numero_chamado";
     $enviar_atualizacao = mysqli_query($conn, $atualizar_chamado);
+
+    include_once 'disparo_email.php';
 
 
     /*

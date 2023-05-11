@@ -17,7 +17,15 @@
     //Verificar se o Ticket é valido ou da bancada
     if(empty($row_chamado)){
         $mensagem_alerta = "<div class='alert alert-danger' role='alert'>O chamado inserido, não existe ou não pertece a categoria bancada</div>";
-    }else{
+    }else if($row_chamado['status'] == 6){
+        $mensagem_alerta = "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Solucionado</b></div>";
+        echo "status 6".$row_chamado['status'];
+    }else if($row_chamado['status'] == 5){
+        $mensagem_alerta = "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Fechado</b></div>";
+    echo "status 5".$row_chamado['status'];
+    }
+    else{
+        echo "nada".$row_chamado['status'];
     }
 
 

@@ -1,5 +1,5 @@
 <?php
-$ticket = 1;
+$ticket = 100;
     //Verificar se o Ticket é valido ou da bancada
 	if(isset($_GET['ticket'])){
 		$ticket = $_GET['ticket'];
@@ -55,8 +55,12 @@ $ticket = 1;
 
 					<?php
 					if($ticket == 0){
-						Echo 	"<div class='alert alert-danger' role='alert'>O chamado inserido, não existe ou não pertece a categoria bancada</div>";
-					}							
+						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, não existe ou não pertece a categoria bancada</div>";
+					}else if($ticket == 1){
+						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Solucionado</b></div>";
+					}else if($ticket == 2){
+						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Fechado</b></div>";
+					}
 					?>
 
 					<div class="container-login100-form-btn">
