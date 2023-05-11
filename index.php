@@ -57,9 +57,9 @@ $ticket = 100;
 					if($ticket == 0){
 						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, não existe ou não pertece a categoria bancada</div>";
 					}else if($ticket == 1){
-						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Solucionado</b></div>";
-					}else if($ticket == 2){
 						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Fechado</b></div>";
+					}else if($ticket == 2){
+						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Solucionado</b></div>";
 					}
 					?>
 
