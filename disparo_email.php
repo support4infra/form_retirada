@@ -29,6 +29,8 @@ $mail = new PHPMailer(true);
     for($i=0 ; $i < $n_palavras ; $i++ ){
         $mail->addAddress($array_email[$i]);
     }
+    $mail->addReplyTo('suporte@4infra.com.br');
+    $mail->addCC('suporte@4infra.com.br');
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
