@@ -50,6 +50,11 @@
     //Fechar o chamado, atualizando o status para FECHADO
     $atualizar_chamado = "UPDATE glpi_tickets SET Status = 6 where id = $numero_chamado";
     $enviar_atualizacao = mysqli_query($conn, $atualizar_chamado);
+    
+    //Descontruindo os dados da input de 
+	$array_email = explode(" |",$email_cliente);
+	$n_palavras = count($array_email);
+	
 
     include_once 'disparo_email.php';
 
