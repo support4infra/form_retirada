@@ -60,6 +60,8 @@ $ticket = 100;
 						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Fechado</b></div>";
 					}else if($ticket == 2){
 						Echo "<div class='alert alert-danger' role='alert'>O chamado inserido, se encontra com o status <b>Solucionado</b></div>";
+					}else if($ticket == 3){
+						Echo "<div class='alert alert-warning' role='alert'>O chamado inserido, não possui o e-mail do cliente atribuido <br> Para que consiga retirar a máquina, gentileza inserir o e-mail do responsavel no chamado</div>";
 					}
 					?>
 
