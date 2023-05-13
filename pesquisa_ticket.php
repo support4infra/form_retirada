@@ -30,19 +30,24 @@
         //Recebe o número da ID do usuário requerente do chamado
         $id_usuario = $row_emails['id_usuario'];
 
-        
-
         //Caso a ID seja 0, o requerente tem um e-mail que não é cadastrado no glpi.
         //Caso a ID seja diferente de 0, o requerente tem cadastro no glpi.
-        
-            $email_linha_atual = $row_emails['email_inserido'];
+        if($id_usuario != 0){
+            //Pesquisa no banco as usuários com acesso criado no glpi - Solução para campos do e-mail em branco na View glpi_consult_website
+            $pesquisa_usuario = 
+            "SELECT uexis.email as email_glpi_existente FROM glpi_consult_website glpi join glpi_useremails uexis on glpi.id_usuario = uexis.users_id WHERE ticket = '$numero_chamado' AND id _usuario = '$id_usuario'";
+            $resultado_usuario = mysqli_query($conn, $pesquisa_usuario);
+            $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 
-            echo $id_usuario."<b>".$email_linha_atual."<br>";
+            $email_linha_atual = $row_usuario['email_glpi_existente'];
+        }else{
+            $email_linha_atual = $row_emails['email_inserido'];
+        }
         
         //Condição para inserir |, caso tenha mais de 1 e-mail - SEPARAR
         if($email_linha_atual != ""){
             if($i >= 1){
-                $emails .= " | ".$email_linha_atual;
+                $emails.= " | ".$email_linha_atual;
             }else{
                 $emails .= $email_linha_atual;
             }
