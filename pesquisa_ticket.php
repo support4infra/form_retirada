@@ -30,17 +30,19 @@
         //Recebe o número da ID do usuário requerente do chamado
         $id_usuario = $row_emails['id_usuario'];
 
-        echo $id_usuario;
+        
 
         //Caso a ID seja 0, o requerente tem um e-mail que não é cadastrado no glpi.
         //Caso a ID seja diferente de 0, o requerente tem cadastro no glpi.
         
             $email_linha_atual = $row_emails['email_inserido'];
+
+            echo $id_usuario."<b>".$email_linha_atual."<br>";
         
         //Condição para inserir |, caso tenha mais de 1 e-mail - SEPARAR
         if($email_linha_atual != ""){
             if($i >= 1){
-                $emails.= " | ".$email_linha_atual;
+                $emails .= " | ".$email_linha_atual;
             }else{
                 $emails .= $email_linha_atual;
             }
