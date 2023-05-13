@@ -26,11 +26,12 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom('4infrabh@gmail.com', '4infra');
+    $mail->addCC('suporte@4infra.com.br');
+    $mail->addReplyTo('suporte@4infra.com.br');
     for($i=0 ; $i < $n_palavras ; $i++ ){
         $mail->addAddress($array_email[$i]);
     }
-    $mail->addReplyTo('suporte@4infra.com.br');
-    $mail->addCC('suporte@4infra.com.br');
+    
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML

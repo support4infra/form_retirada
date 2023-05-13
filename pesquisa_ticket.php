@@ -11,17 +11,13 @@
 
 
     //Condição pra verificar se o ticket ta fechado, solucionado, nao existe ou nao pertence a bancada
-    if(empty($row_chamado)){
-        header('location:index.php?ticket=0');
-    }
-
-    if(empty($row_chamado)){
+    /*if(empty($row_chamado)){
         header('location:index.php?ticket=0');
     }else if($row_chamado['status'] == 6){
         header('location:index.php?ticket=1');
     }else if($row_chamado['status'] == 5){
         header('location:index.php?ticket=2');
-    }
+    }*/
 
     //Variaveis
     $emails = "";
@@ -33,7 +29,7 @@
         
         //Recebe o número da ID do usuário requerente do chamado
         $id_usuario = $row_emails['id_usuario'];
-        
+
         //Caso a ID seja 0, o requerente tem um e-mail que não é cadastrado no glpi.
         //Caso a ID seja diferente de 0, o requerente tem cadastro no glpi.
         if($id_usuario != 0){
