@@ -35,11 +35,13 @@
         if($id_usuario != 0){
             //Pesquisa no banco as usuários com acesso criado no glpi - Solução para campos do e-mail em branco na View glpi_consult_website
             $pesquisa_usuario = 
-            "SELECT uexis.email as email_glpi_existente FROM glpi_consult_website glpi join glpi_useremails uexis on glpi.id_usuario = uexis.users_id WHERE ticket = '$numero_chamado' AND id _usuario = '$id_usuario'";
+            "SELECT uexis.email as email_glpi_existente FROM glpi_consult_website glpi inner join glpi_useremails uexis on glpi.id_usuario = uexis.users_id WHERE glpi.ticket = '$numero_chamado' AND glpi.id_usuario = '$id_usuario'";
             $resultado_usuario = mysqli_query($conn, $pesquisa_usuario);
             $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 
             $email_linha_atual = $row_usuario['email_glpi_existente'];
+
+            var_dump($row_usuario); 
         }else{
             $email_linha_atual = $row_emails['email_inserido'];
         }
